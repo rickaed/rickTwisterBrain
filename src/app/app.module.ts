@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
 
 
+import { HomeComponent } from './home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent,
-    
+   
+    HomeComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
