@@ -1,0 +1,35 @@
+* {
+    width: 100%;
+    height: 100%;
+}
+
+/****** fond pour final ******/
+.bg_player{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    background-color: var(--colorJaune);
+   
+ }
+/* 2player*/
+/* .triangle {
+     border-top: 100vh solid var(--colorJaune);
+    border-right: 56vh solid var(--colorBleu);
+} */
+
+/*3players*/
+/* .trapeze{
+    width:100%;
+	height:500%;
+	border:1px solid var(--colorOrange);
+	border-color:var(--colorJaune) transparent transparent var(--colorOrange);
+	border-width:100px;
+    
+} */
+
+
+
+
+/*4players*/
+
