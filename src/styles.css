@@ -53,15 +53,20 @@ table {
 
 }
 
-/* body {
+body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
     font-size: 20px;
     background-image: url("assets/fond.svg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
 
-} */
+}
 
-body {
+/* body {
   z-index: -1;
     width: 100vw;
     height: 100vh;
@@ -69,4 +74,4 @@ body {
     background-repeat:no-repeat;
     background-size: cover;
     background-position: center;
-}
+} */
