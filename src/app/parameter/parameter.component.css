@@ -102,9 +102,13 @@ div {
     position: absolute;
     bottom: 15px;
     left: 15px;
-    }
-input{
+}
+
+input {
     background-color: var(--colorJaune);
-height: 25px;
-color: var(--colorOrange);
+    height: 50px;
+    width: 100px;
+    color: var(--colorOrange);
+    border: solid 1px var(--colorBleu);
+    border-radius: 50% 0 0 50%;
 }
