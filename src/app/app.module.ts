@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { ParameterComponent } from './parameter/parameter.component';
 import { FinalComponent } from './final/final.component';
+import { WheelComponent } from './wheel/wheel.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FinalComponent } from './final/final.component';
     PlayerComponent,
     GameComponent,
     ParameterComponent,
-    FinalComponent
+    FinalComponent,
+    WheelComponent
   ],
   imports: [
     BrowserModule,
