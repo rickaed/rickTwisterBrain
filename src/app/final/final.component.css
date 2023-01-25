@@ -1,19 +1,17 @@
-/******* 1joueur *****************/
 .container {
     width: 100%;
     height: 100%;
-    /* background-color: var(--colorJaune); */
+ /* background-color: var(--colorJaune);  */
     /*backrgound 1joueur*/
-    background: linear-gradient(0.82turn, rgb(4, 99, 155), rgb(245, 241, 241), var(--colorJaune));
-    /*backrgound joueurs*/
-
+     background: linear-gradient(0.82turn, rgb(4, 99, 155), rgb(245, 241, 241), var(--colorJaune)); 
 }
 
-.lot {
+.header {
     width: 100%;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
+    height: 35vh;
+display: flex;
+flex-direction: row;
+
 }
 
 /*mode 1joueur*/
@@ -26,27 +24,27 @@
 }
 
 .avatar {
-    width: 40%;
+    width: 30%;
 }
 
 .txt_score {
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     background-color: antiquewhite;
-    padding: 10px 25px;
-    border-radius: 15px;
+    padding: 5px 15px;
+    border-radius: 5px 10px;
 }
 
 
 
 
 /***************** mode 2joueur ****************/
-/* .joueurs2 {
+ .joueurs2 {
     display: flex;
   flex-direction: column;
   background-color: brown;
   width: 100%;
-  height: 100%;
+ 
 }
 
 .container_avatar {
@@ -56,23 +54,20 @@
     position: relative;
     top: 50px;
     left: 30px;
-} */
+} 
 
 
-/*feur d'artifice*/
-/*div resultat*/
-.resultat {
-    margin-top: 25px;
+/*feux d'artifice*/
+.main {
+    height: 45vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 
 }
-
 .bravo {
     text-transform: uppercase;
-    margin-top: 50px;
     font-size: 2rem;
     /*texte clignottant*/
     animation-duration: 5s;
@@ -102,11 +97,18 @@
 
 
 /******** boutons ***************/
+.footer {
+    width: 100%;
+    height: 20vh;
+     display: flex;
+     flex-direction: column;
+ 
 
+}
 /* btn1 terminer */
 .boutons {
     display: flex;
-    flex-direction: column;
+  
     align-items: center;
     justify-content: center;
 }
@@ -115,7 +117,7 @@
     width: 85px;
     text-align: center;
     position: relative;
-    top: 231px;
+    /* top: 231px; */
     text-transform: uppercase;
     overflow: hidden;
     text-decoration: none;

@@ -10,6 +10,7 @@ import { ParameterComponent } from './parameter/parameter.component';
 import { FinalComponent } from './final/final.component';
 import { WheelComponent } from './wheel/wheel.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
