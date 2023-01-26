@@ -1,37 +1,41 @@
-
-<!-- 1joueur -->
-<div class="container">
-    <div class="lot">
-        <div class="joueur">
-            <img class="avatar" src="assets/avatar1.svg" alt="avatar1">
+    <div class="container">
+      
+    <div class="header">
+     
+        <div class="joueur"> 
+            <img class="avatar avatar1" [src]="[myJoueur1.image]" [alt]="[myJoueur1.alt]">
+            <p class="txt_score">{{myJoueur1.score}} </p>
+            <img class="avatar avatar2" [src]="[myJoueur2.image]" [alt]="[myJoueur2.alt]">
+           <p class="txt_score">{{myJoueur2.score}} </p>
+            <img class="avatar avatar3" [src]="[myJoueur3.image]" [alt]="[myJoueur3.alt]">
+          <p class="txt_score">{{myJoueur3.score}} </p>
+            <img class="avatar avatar4" [src]="[myJoueur4.image]" [alt]="[myJoueur4.alt]">
+           <p class="txt_score">{{myJoueur4.score}} </p>
         </div>
+    </div>
 
-        <div class="resultat">
-            <p class="bravo"> Bravo </p>
-        </div>
-        <p>Score : _ _ _</p>
-        <div class="container_buttom">
-            <button class="terminer">Terminer</button> 
-            <button class="jouer">Jouer</button>
+    <div class="main">
+        <!-- <button (click)="showConfetti()">confettis</button> -->
+        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur1.title==='winner'"> Bravo <img  [src]="[myJoueur1.image]"></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur2.title==='winner'"> Bravo <img  [src]="[myJoueur2.image]"></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur3.title==='winner'"> Bravo <img  [src]="[myJoueur3.image]"></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur4.title==='winner'"> Bravo  <img  [src]="[myJoueur4.image]"></p>
+    </div>
+
+
+    <div class="footer">
+        <div class="boutons" (click)="showConfetti()">
+          <div class="btn2">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                ReJouer
+            </div>
         </div>
     </div>
 </div>
-
-
-<!-- 2 joueurs -->
-
-<!-- <div class="triangle">
-    <div class="joueur1">
-        <img class="avatar" src="assets/avatar1.svg" alt="avatar1">
-        <p>Score : _ _ _ </p>
-    </div>
-    <div class="joueur2">
-        <img class="avatar" src="assets/avatar2.svg" alt="avatar1">
-        <p>Score : _ _ _ </p>
-    </div>
-</div> -->
-
-
-<script>
+<!-- <script>
     confetti()
-</script>
+</script> -->
+

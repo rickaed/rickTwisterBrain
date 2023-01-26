@@ -13,6 +13,7 @@ import { PlayerSettingsComponent } from './player-settings/player-settings.compo
 import { FormsModule } from '@angular/forms';
 import { ReglesComponent } from './regles/regles.component';
 
+
 @NgModule({
   declarations: [	
     AppComponent,
@@ -24,7 +25,7 @@ import { ReglesComponent } from './regles/regles.component';
     WheelComponent,
     PlayerSettingsComponent,
     
-    ReglesComponent
+    ReglesComponent,
   ],
    
   imports: [
