@@ -1,7 +1,7 @@
 p,
 select,
 input {
-    font-size: 1rem;
+font-size: 1rem;
 }
 
 section {
@@ -104,7 +104,7 @@ div {
     left: 15px;
 }
 
-input {
+button {
     background-color: var(--colorJaune);
     height: 50px;
     width: 100px;
