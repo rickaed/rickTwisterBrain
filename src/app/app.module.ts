@@ -9,18 +9,20 @@ import { GameComponent } from './game/game.component';
 import { ParameterComponent } from './parameter/parameter.component';
 import { FinalComponent } from './final/final.component';
 import { WheelComponent } from './wheel/wheel.component';
+import { ReglesComponent } from './regles/regles.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     PlayerComponent,
     GameComponent,
     ParameterComponent,
     FinalComponent,
-    WheelComponent
-  ],
+    WheelComponent,
+      ReglesComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule
