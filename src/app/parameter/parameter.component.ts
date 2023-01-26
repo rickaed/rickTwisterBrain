@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./parameter.component.css']
 })
 export class ParameterComponent {
+  nbQuestions! :number ;
 
+  ngOnInit(){
+this.nbQuestions = 10
+  }
 }

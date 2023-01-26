@@ -45,20 +45,29 @@ table {
 
 /* You can add global styles to this file, and also import other style files */
 :root{
---colorJaune : #FCBD08;
---colorBleu : #1A7279;
---colorOrange : #D5551E;
---colorCyan : #04C7D6 ;
---colorBlanc : #f0f0f0 ;
-
+    --colorJaune : #f2ab09 ;
+    --colorBleu : #0798b1 ;
+    --colorOrange : #d8230a ;
+    --colorVert : #88cb53 ;
+    --font-color:#f1e9d4;
+--border-radius : 15px
 }
 
 body {
-  z-index: -1;
+   overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background-image: url("src/assets/background.png");
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    font-size: 20px;
+    background-image: url("assets/fond.svg");
     background-repeat:no-repeat;
     background-size:auto;
     background-position: center;
+
 }
+
+
+
+
