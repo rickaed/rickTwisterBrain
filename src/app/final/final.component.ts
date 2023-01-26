@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Joueur} from 'src/app/model/joueur';  /*j'ai importé mon interface joeurs*/
+import { Joueurs } from '../models/joueurs';
+const confettis = require('canvas-confetti');
+
 
 @Component({
   selector: 'app-final',
@@ -8,33 +10,38 @@ import {Joueur} from 'src/app/model/joueur';  /*j'ai importé mon interface joeu
 })
 export class FinalComponent implements OnInit {
 
-  // joueurs: Joueur[] = [
-  //   {
-  //   id : 1,
-  //   image : "asset/avatar1.svg",
-  //   score : 25
-  // },
-  // {
-  //   id : 2,
-  //   image : "asset/avatar2.svg",
-  //   score : 35
-  // },
-  // {
-  //   id : 3,
-  //   image : "asset/avatar3.svg",
-  //   score : 70
-  // },
-  // {
-  //   id : 4,
-  //   image : "asset/avatar4.svg",
-  //   score : 12
-  // }
-  // ]
+  myJoueur1 = new Joueurs('joueur1', '../../assets/avatar1.svg', 'logo1');
+  myJoueur2 = new Joueurs('joueur2', '../../assets/avatar2.svg', 'logo2');
+  myJoueur3 = new Joueurs('joueur3', '../../assets/avatar3.svg', 'logo3','winner');
+  myJoueur4 = new Joueurs('joueur4', '../../assets/avatar4.svg', 'logo4');
+  joueurArray = [this.myJoueur1, this?.myJoueur2, this?.myJoueur3, this?.myJoueur4];
 
-  constructor(){}
+
+
+  constructor() { }
+
 
   ngOnInit(): void {
+    var myConfetti = confettis.create();
+    myConfetti({
+      particleCount: 1000,
+      spread: 160,
+      propagation: 260
+      // any other options from the global
+      // confetti function
+    });
+  }
 
-    
+  showConfetti() {
+    var myConfetti = confettis.create();
+    myConfetti({
+      particleCount: 1000,
+      spread: 160,
+      propagation: 589
+
+      // any other options from the global
+      // confetti function
+
+    });
   }
 }

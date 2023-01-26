@@ -1,37 +1,41 @@
     <div class="container">
+      
     <div class="header">
      
-        <div class="joueur">
-            <img class="avatar avatar1" src="assets/avatar1.svg" alt="avatar1">
-            <p class="txt_score">Score : _ _ _ _</p>
-            <img class="avatar avatar2" src="assets/avatar2.svg" alt="avatar2">
-            <p class="txt_score">Score : _ _ _ _</p>
-            <img class="avatar avatar3" src="assets/avatar3.svg" alt="avatar3">
-           <p class="txt_score">Score : _ _ _ _</p>
-            <img class="avatar avatar4" src="assets/avatar4.svg" alt="avatar4">
-            <p class="txt_score">Score : _ _ _ _</p>
+        <div class="joueur"> 
+            <img class="avatar avatar1" [src]="[myJoueur1.image]" [alt]="[myJoueur1.alt]">
+            <p class="txt_score">{{myJoueur1.score}} </p>
+            <img class="avatar avatar2" [src]="[myJoueur2.image]" [alt]="[myJoueur2.alt]">
+           <p class="txt_score">{{myJoueur2.score}} </p>
+            <img class="avatar avatar3" [src]="[myJoueur3.image]" [alt]="[myJoueur3.alt]">
+          <p class="txt_score">{{myJoueur3.score}} </p>
+            <img class="avatar avatar4" [src]="[myJoueur4.image]" [alt]="[myJoueur4.alt]">
+           <p class="txt_score">{{myJoueur4.score}} </p>
         </div>
     </div>
-    
+
     <div class="main">
-        <p class="bravo"> Bravo </p>
+        <!-- <button (click)="showConfetti()">confettis</button> -->
+        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur1.title==='winner'"> Bravo <img  [src]="[myJoueur1.image]"></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur2.title==='winner'"> Bravo <img  [src]="[myJoueur2.image]"></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur3.title==='winner'"> Bravo <img  [src]="[myJoueur3.image]"></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur4.title==='winner'"> Bravo  <img  [src]="[myJoueur4.image]"></p>
     </div>
 
-<<<<<<< HEAD
+
     <div class="footer">
-        <div class="boutons">
+        <div class="boutons" (click)="showConfetti()">
           <div class="btn2">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                Jouer
+                ReJouer
             </div>
         </div>
     </div>
 </div>
-=======
 <script>
     confetti()
 </script>
->>>>>>> decf1a3f863b72bfa2a4dc2d758756ff81d32e80
+
