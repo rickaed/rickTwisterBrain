@@ -18,7 +18,7 @@
 .head p {
   color: var(--colorBleu);
   font-weight: bold;
-  background-color: var(--colorBlanc);
+  background-color: white;
   border-radius: 15px;
   text-align: center;
   min-width: 30%;
@@ -68,7 +68,7 @@ img{
   left: calc(80vw - 75%);
   z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: var(--colorBlanc);
+  background-color: wheat;
   width: 40vw;
   height: 30px;
   border-radius: 5px;
