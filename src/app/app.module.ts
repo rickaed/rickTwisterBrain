@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { GameComponent } from './game/game.component';
 import { ParameterComponent } from './parameter/parameter.component';
 import { FinalComponent } from './final/final.component';
 import { WheelComponent } from './wheel/wheel.component';
+import { QuestionComponent } from './question/question.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { WheelComponent } from './wheel/wheel.component';
     GameComponent,
     ParameterComponent,
     FinalComponent,
-    WheelComponent
+    WheelComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
