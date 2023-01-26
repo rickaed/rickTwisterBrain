@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="title">
+        <p>Nombre de joueurs</p>
+        <button>-</button>
+        <p>1</p>
+        <button>+</button>
+    </div>
+    <form >
+       
+        <div class="player">
+            <img [src]="avatar" alt="" />
+            <button class="color"></button>
+            <label  class="avatar" for="avatar">Choisir votre avatar</label>
+            <select name="avatar" id="avatar" #select [(ngModel)]="avatar">
+              <option value="assets/avatar1.svg">Avatar 1</option>
+              <option value="assets/avatar2.svg">Avatar 2</option>
+              <option value="assets/avatar3.svg">Avatar 3</option>
+              <option value="assets/avatar4.svg">Avatar 4</option>
+            </select>
+            <div>
+              <label for="pseudo">Pseudo</label>
+              <input type="text" #pseudo placeholder="inscrire votre pseudo"/>
+            </div>
+          
+            <button class="playBtn" (click)="test()" routerLink="game">Game</button>
+        </div>
+    </form>
+    
+</div>
+

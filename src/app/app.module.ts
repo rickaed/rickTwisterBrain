@@ -9,6 +9,8 @@ import { GameComponent } from './game/game.component';
 import { ParameterComponent } from './parameter/parameter.component';
 import { FinalComponent } from './final/final.component';
 import { WheelComponent } from './wheel/wheel.component';
+import { PlayerSettingsComponent } from './player-settings/player-settings.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,14 @@ import { WheelComponent } from './wheel/wheel.component';
     GameComponent,
     ParameterComponent,
     FinalComponent,
-    WheelComponent
+    WheelComponent,
+    PlayerSettingsComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
