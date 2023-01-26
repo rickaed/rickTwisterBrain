@@ -1,59 +1,53 @@
-body{
-    margin:0px;
-}
-.containerHome{
-display: flex;
-flex-direction: column;
-justify-content: center;
-
-
+.containerHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.logo{
+.logo {
     /* position:relative; */
     width: 250px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
-
 }
-.btnHomes{
+
+.btnHomes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-   
+
 }
+
 .btnJouer {
     height: 50px;
     width: 250px;
     border-radius: 10px;
     background-color: var(--colorJaune);
-    color:white;
+    color: white;
     font-size: 20px;
     cursor: grab;
 }
-.btnRegles{
+
+.btnRegles {
     height: 50px;
     width: 250px;
     border-radius: 10px;
     margin-top: 80px;
     background-color: var(--colorOrange);
-    color:white;
+    color: white;
     font-size: 20px;
     cursor: grab;
 }
-.btnParametres{
+
+.btnParametres {
     height: 25px;
-    width:125px;
+    width: 125px;
     border-radius: 10px;
     margin-top: 25px;
     position: center;
     background-color: var(--colorBleu);
-    color:white;
+    color: white;
     font-size: 12px;
     cursor: grab;
-
-
 }
