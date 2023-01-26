@@ -1,5 +1,8 @@
-<<<<<<< HEAD
-=======
+/* --colorJaune : #FCBD08; 
+--colorBleu : #1A7279;
+--colorOrange : #D5551E;
+--colorCyan : #04C7D6 ;
+--colorBlanc : #f0f0f0 ; */
 body {
     width: 90vw;
     height: 90vh;
@@ -11,6 +14,8 @@ body {
 .container {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
     /* margin: auto; */
     
 }
@@ -20,6 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px 0;
+    font-family: sans-serif;
 }
 
 .container .title p {
@@ -39,32 +45,55 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    font-family: sans-serif;
    
 }
 
 .container form .player {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 10px 0;
 }
 
-.container form .player input {
+.container form .player div input {
     width: 100px;
-    margin: 0 20px;
     height: 30px;
-    padding: 0 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px 20px;
     border-radius: 5px;
     text-align: center;
 }
-.container form .player .color {
-    width:30px;
-    height: 30px;
-    margin: 0 15px;
-    border-radius: 5px;
+.container form .player img {
+    width:100px;
+    height: 100px;
+    margin: 20px 0px;
+    background: var(--font-color);
+    padding: 5px;
+    border-radius: 50%;
+}
+.container form .player .avatar {
+    margin-top: 20px;    
+}
+.container form .player label {
+    color: var(--font-color);
     
 }
-.container form .player:nth-child(1) .color{
+.container form select{
+   font-size: 20px;
+   border-radius: 5px;
+   padding: 5px 20px;
+    margin: 20px 0;
+}
+.container form .player .color {
+    width:50px;
+    height: 50px;
+    margin: 0 15px;
+    border-radius: 5px;
+    background: var(--colorJaune);
+}
+/* .container form .player:nth-child(1) .color{
     background: var(--colorCyan);
 }
 .container form .player:nth-child(2) .color{
@@ -81,16 +110,8 @@ body {
 
 .container form .player:nth-child(5) .color{
     background: var(--colorBlanc);
-}
+} */
 
-.container form .player img {
-    width:40px;
-    height: 40px;
-    margin: 0 20px;
-    background: var(--colorBlanc);
-    padding: 5px;
-    border-radius: 50%;
-}
 
 .container form .playBtn {
     width: 250px;
@@ -103,4 +124,3 @@ body {
     letter-spacing: 1px;
     font-weight: 600;
 }
->>>>>>> 145ed10f5e10bcc5ac4c687f799e2ccd84f627ef
