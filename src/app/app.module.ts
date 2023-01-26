@@ -9,12 +9,9 @@ import { GameComponent } from './game/game.component';
 import { ParameterComponent } from './parameter/parameter.component';
 import { FinalComponent } from './final/final.component';
 import { WheelComponent } from './wheel/wheel.component';
-<<<<<<< HEAD
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 import { FormsModule } from '@angular/forms';
-=======
 import { ReglesComponent } from './regles/regles.component';
->>>>>>> 145ed10f5e10bcc5ac4c687f799e2ccd84f627ef
 
 
 @NgModule({
@@ -26,14 +23,11 @@ import { ReglesComponent } from './regles/regles.component';
     ParameterComponent,
     FinalComponent,
     WheelComponent,
-<<<<<<< HEAD
     PlayerSettingsComponent,
-    
-  ],
-=======
-      ReglesComponent
-   ],
->>>>>>> 145ed10f5e10bcc5ac4c687f799e2ccd84f627ef
+    ReglesComponent
+    ],
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,
