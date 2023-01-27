@@ -2,49 +2,47 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .logo {
     /* position:relative; */
-    width: 250px;
+    max-width: 75vw;
+    max-height: 50vh;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin:0 auto;
+   
 }
 
 .btnHomes {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5vh;
+}
 
+.btnRegles,
+.btnJouer {
+    height: 8vh;
+    width: 75vw;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: grab;
 }
 
 .btnJouer {
-    height: 50px;
-    width: 250px;
-    border-radius: 10px;
     background-color: var(--colorJaune);
-    color: white;
-    font-size: 20px;
-    cursor: grab;
 }
 
 .btnRegles {
-    height: 50px;
-    width: 250px;
-    border-radius: 10px;
-    margin-top: 80px;
     background-color: var(--colorOrange);
-    color: white;
-    font-size: 20px;
-    cursor: grab;
 }
 
 .btnParametres {
-    height: 25px;
-    width: 125px;
+    height: 3vh;
+    width: 40vw;
     border-radius: 10px;
-    margin-top: 25px;
     position: center;
     background-color: var(--colorBleu);
     color: white;
