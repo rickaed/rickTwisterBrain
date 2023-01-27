@@ -15,7 +15,6 @@ import { WheelComponent } from './wheel/wheel.component';
 import { QuestionComponent } from './question/question.component';
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 import { ReglesComponent } from './regles/regles.component';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
