@@ -2,28 +2,30 @@
 
     <div class="header">
 
-        <div class="joueur">
-            <img class="avatar avatar1" [src]="[myJoueur1.image]" [alt]="[myJoueur1.alt]">
-            <p class="txt_score">{{myJoueur1.score}} </p>
-            <img class="avatar avatar2" [src]="[myJoueur2.image]" [alt]="[myJoueur2.alt]">
+        <div class="joueur" *ngFor="let joueur of joueursArray">
+            <img class="avatar avatar1" src={{joueur.image}} >
+            <p class="txt_score">{{joueur.score}}</p>
+
+            <!-- <img class="avatar avatar2" [src]="[myJoueur2.image]" [alt]="[myJoueur2.alt]">
             <p class="txt_score">{{myJoueur2.score}} </p>
             <img class="avatar avatar3" [src]="[myJoueur3.image]" [alt]="[myJoueur3.alt]">
             <p class="txt_score">{{myJoueur3.score}} </p>
             <img class="avatar avatar4" [src]="[myJoueur4.image]" [alt]="[myJoueur4.alt]">
-            <p class="txt_score">{{myJoueur4.score}} </p>
+            <p class="txt_score">{{myJoueur4.score}} </p> -->
         </div>
     </div>
 
     <div class="main">
-        <!-- <button (click)="showConfetti()">confettis</button> -->
-        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur1.title==='winner'"> Bravo <img
-                [src]="[myJoueur1.image]"></p>
-        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur2.title==='winner'"> Bravo <img
-                [src]="[myJoueur2.image]"></p>
-        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur3.title==='winner'"> Bravo <img
-                [src]="[myJoueur3.image]"></p>
-        <p class="bravo" (click)="showConfetti()" *ngIf="myJoueur4.title==='winner'"> Bravo <img
-                [src]="[myJoueur4.image]"></p>
+        <button (click)="showConfetti()">confettis</button> 
+        <p class="bravo" (click)="showConfetti()" *ngIf="joueursArray[0].title==='winner'"> Bravo <img
+                src={{joueursArray[0].image}}></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="joueursArray[1].title==='winner'"> Bravo <img
+                src={{joueursArray[1].image}}></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="joueursArray[2].title==='winner'"> Bravo <img
+                src={{joueursArray[2].image}}></p>
+        <p class="bravo" (click)="showConfetti()" *ngIf="joueursArray[3].title==='winner'"> Bravo <img
+                src={{joueursArray[3].image}}></p>
+        
     </div>
 
 
