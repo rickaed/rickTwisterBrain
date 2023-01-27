@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit,Input } from '@angular/core';
+import { PlayersService } from '../players.service';
 
 @Component({
   selector: 'app-player-settings',
@@ -6,6 +7,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./player-settings.component.css']
 })
 export class PlayerSettingsComponent implements OnInit {
+@Input()player!:PlayersService;
   avatar = 'assets/avatar1.svg';
   // @ViewChild("pseudo") public el!: ElementRef<HTMLInputElement>;
   // @ViewChild("select") public selec!: ElementRef<HTMLSelectElement>;
