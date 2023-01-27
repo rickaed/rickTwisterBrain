@@ -11,9 +11,11 @@ import { GameComponent } from './game/game.component';
 import { ParameterComponent } from './parameter/parameter.component';
 import { FinalComponent } from './final/final.component';
 import { WheelComponent } from './wheel/wheel.component';
+
 import { QuestionComponent } from './question/question.component';
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 import { ReglesComponent } from './regles/regles.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { ReglesComponent } from './regles/regles.component';
     ReglesComponent,
     QuestionComponent
   ],
+
 
   imports: [
     BrowserModule,
