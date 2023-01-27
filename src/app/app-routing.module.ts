@@ -4,6 +4,7 @@ import { FinalComponent } from './final/final.component';
 import { GameComponent } from './game/game.component';
 import { HomeComponent } from './home/home.component';
 import { ParameterComponent } from './parameter/parameter.component';
+import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 import { PlayerComponent } from './player/player.component';
 import { ReglesComponent } from './regles/regles.component';
 import { WheelComponent } from './wheel/wheel.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
 // <a [routerLink]="['/home']">HOME</a>
 {path : 'player',component: PlayerComponent},
 // <a [routerLink]="['/player']">PLAYER</a>
-// {path : 'player-settings',component: PlayerSettingsComponent}, !!! faire l'import component
+{path : 'player-settings',component: PlayerSettingsComponent}, //!!! faire l'import component
 // <a [routerLink]="['/player-settings']">Player-Settings</a>
 {path : 'regles',component: ReglesComponent},
 // <a [routerLink]="['/regles']">REGLES</a>
