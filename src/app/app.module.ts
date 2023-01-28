@@ -15,6 +15,8 @@ import { WheelComponent } from './wheel/wheel.component';
 import { QuestionComponent } from './question/question.component';
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 import { ReglesComponent } from './regles/regles.component';
+import { PlayersService } from './players.service';
+import { Joueurs } from './models/joueurs';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { ReglesComponent } from './regles/regles.component';
     PlayerSettingsComponent,
     
     ReglesComponent,
-    QuestionComponent
+    QuestionComponent,
+    
+    
   ],
    
 
@@ -39,6 +43,7 @@ import { ReglesComponent } from './regles/regles.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

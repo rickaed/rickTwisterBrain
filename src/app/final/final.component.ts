@@ -1,27 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { Joueurs } from '../models/joueurs';
 const confettis = require('canvas-confetti');
+import { Component, forwardRef, Inject, OnInit } from '@angular/core';
+import { PlayersService } from '../players.service';
+import { Joueurs } from '../models/joueurs';
 
 
 @Component({
   selector: 'app-final',
   templateUrl: './final.component.html',
-  styleUrls: ['./final.component.css']
+  styleUrls: ['./final.component.css'],
+  
 })
 export class FinalComponent implements OnInit {
 
-  myJoueur1 = new Joueurs('joueur1', '../../assets/avatar1.svg', 'logo1');
-  myJoueur2 = new Joueurs('joueur2', '../../assets/avatar2.svg', 'logo2');
-  myJoueur3 = new Joueurs('joueur3', '../../assets/avatar3.svg', 'logo3','winner');
-  myJoueur4 = new Joueurs('joueur4', '../../assets/avatar4.svg', 'logo4');
-  joueurArray = [this.myJoueur1, this?.myJoueur2, this?.myJoueur3, this?.myJoueur4];
 
+public joueursArray:Joueurs[]= this.joueursService.joueurArray
 
-
-  constructor() { }
+  constructor(@Inject(forwardRef(() => PlayersService)) private joueursService : PlayersService) {
+    console.log(this.joueursService.myJoueur1.image);
+    
+    }
 
 
   ngOnInit(): void {
+   
+
     var myConfetti = confettis.create();
     myConfetti({
       particleCount: 1000,
