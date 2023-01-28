@@ -2,9 +2,9 @@
 
     <div class="header">
 
-        <div class="joueur" *ngFor="let joueur of joueursArray">
-            <img class="avatar avatar1" src={{joueur.image}} >
-            <p class="txt_score">{{joueur.score}}</p>
+        <div class="joueur" *ngFor="let player of players">
+            <img class="avatar avatar1" src={{player.avatar}} >
+            <p class="txt_score">{{player.score}}</p>
 
             <!-- <img class="avatar avatar2" [src]="[myJoueur2.image]" [alt]="[myJoueur2.alt]">
             <p class="txt_score">{{myJoueur2.score}} </p>
@@ -17,14 +17,9 @@
 
     <div class="main">
         <button (click)="showConfetti()">confettis</button> 
-        <p class="bravo" (click)="showConfetti()" *ngIf="joueursArray[0].title==='winner'"> Bravo <img
-                src={{joueursArray[0].image}}></p>
-        <p class="bravo" (click)="showConfetti()" *ngIf="joueursArray[1].title==='winner'"> Bravo <img
-                src={{joueursArray[1].image}}></p>
-        <p class="bravo" (click)="showConfetti()" *ngIf="joueursArray[2].title==='winner'"> Bravo <img
-                src={{joueursArray[2].image}}></p>
-        <p class="bravo" (click)="showConfetti()" *ngIf="joueursArray[3].title==='winner'"> Bravo <img
-                src={{joueursArray[3].image}}></p>
+        <p class="bravo" (click)="showConfetti()" > Bravo <img
+                src={{winplayer.avatar}}></p>
+        
         
     </div>
 

@@ -1,4 +1,6 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Player } from "../models/player-model";
+import { PlayersService } from '../services/players.service';
 
 @Component({
   selector: 'app-player-settings',
@@ -6,19 +8,14 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./player-settings.component.css']
 })
 export class PlayerSettingsComponent implements OnInit {
+  players!: Player[];
   avatar = 'assets/avatar1.svg';
-  // @ViewChild("pseudo") public el!: ElementRef<HTMLInputElement>;
-  // @ViewChild("select") public selec!: ElementRef<HTMLSelectElement>;
+ 
 
-  // constructor(public player:PlayerService) { }
+  constructor(private playersService: PlayersService) { }
 
-  test(){
-    // this.player.pseudo = this.el.nativeElement.value;
-    // this.player.avatar = this.selec.nativeElement.value;
-   
-  }
+
   ngOnInit() {
-   
-    
+    this.players=this.playersService.getAllPlayers()
   }
 }
