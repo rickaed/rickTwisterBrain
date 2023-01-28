@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Question } from 'src/app/question.interface';
-import { QuestionService } from 'src/app/question.service';
+import { QuestionService } from '../services/question.service';
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
