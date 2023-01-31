@@ -52,8 +52,8 @@ export class PlayersService {
 
   }
   winnerPlayer() {
-// parcourir les joueurs
-// si score superieur aux autres
+    // parcourir les joueurs
+    // si score superieur aux autres
 
     return this.players[1]
 
