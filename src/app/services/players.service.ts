@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Player } from '../models/player-model';
 
 @Injectable({
@@ -6,32 +7,45 @@ import { Player } from '../models/player-model';
 })
 export class PlayersService {
   players: Player[] = [
-    {
-      id: 0,
-      pseudo: 'joueur 1',
-      avatar: '/assets/avatar1.svg',
-      score: 5
-    },
-    {
-      id: 1,
-      pseudo: 'joueur 2',
-      avatar: '/assets/avatar2.svg',
-      score: 30
-    },
-    {
-      id: 2,
-      pseudo: 'joueur 3',
-      avatar: '/assets/avatar3.svg',
-      score: 10
-    },
-    {
-      id: 3,
-      pseudo: 'joueur 4',
-      avatar: '/assets/avatar4.svg',
-      score: 20
-    }
+    // {
+    //   id: 0,
+    //   pseudo: 'joueur 1',
+    //   avatar: '/assets/avatar1.svg',
+    //   score: 5
+    // },
+    // {
+    //   id: 1,
+    //   pseudo: 'joueur 2',
+    //   avatar: '/assets/avatar2.svg',
+    //   score: 30
+    // },
+    // {
+    //   id: 2,
+    //   pseudo: 'joueur 3',
+    //   avatar: '/assets/avatar3.svg',
+    //   score: 10
+    // },
+    // {
+    //   id: 3,
+    //   pseudo: 'joueur 4',
+    //   avatar: '/assets/avatar4.svg',
+    //   score: 20
+    // }
   ];
+  playerList=new BehaviorSubject(this.players)
+
+  addPlayer(pseudo:string, avatar:string,){
+   
+    const player:Player ={id:this.players.length+1, pseudo:pseudo,avatar:avatar,score: 0}
+    this.players.push(player);
+   
+  }
+
+  removePlayer(i:number){
+    this.players.splice(i,1)
+  }
   getAllPlayers(): Player[] {
+    
     return this.players;
   }
 

@@ -10,115 +10,157 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+
     /* margin: auto; */
 }
 
-.title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px auto;
-    font-family: sans-serif;
-}
 
-.title p {
-    background-color: var(--font-color);
-    padding: 10px;
-    border-radius: 5px;
-    margin: 0 10px;
-    border: none;
-}
-
-.title button {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-}
 
 .container form {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: sans-serif;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+.container form fieldset {
+    border: 3px solid var(--colorJaune);
+    padding: 10px 20px;
+}
+.container form legend {
+    color: black;
+    background-color: var(--colorJaune);
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .container form .player {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 0;
+    margin-top: 30px;
+
 }
 
-.container form .player div input {
-    width: 100px;
-    height: 30px;
-    margin-top: 20px;
-    margin-left: 20px;
-    padding: 5px 20px;
-    border-radius: 5px;
-    text-align: center;
+.selectContainer {
+    display: flex;
+    align-items: center;
+    
 }
 
-.container form .player img {
-    width: 100px;
-    height: 100px;
-    margin: 20px 0px;
-    background: var(--font-color);
+.selectContainer img {
+    width: 80px;
+    margin-right: 20px;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    background-color: var(--colorBleu);
+    color: rgb(0, 0, 0);
     padding: 5px;
-    border-radius: 50%;
-}
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid var(--colorJaune);
 
-.container form .player .avatar {
+}
+.select select {
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid var(--colorVert);
+}
+.inputPseudo{
+    display: flex;
+    align-items: center;
     margin-top: 20px;
+    
+   
+}
+.inputField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+   
+}
+.inputField p {
+   width: 183px;
+    background: rgb(255, 255, 255);
+    color: red;
+    border-radius: 3px;
+    padding: 0 3px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 10px;
 }
 
-.player label {
-    color: var(--font-color);
-}
-
-.container form select {
-    font-size: 20px;
+.inputPseudo input {
+    height: 20px;
+    padding: 5px;
     border-radius: 5px;
-    padding: 5px 20px;
-    margin: 20px 0;
+    margin: 10px ;
+    border: 2px solid var(--colorVert);
 }
 
-.color {
-    width: 14vw;
-    height: 14vw;
-    margin: 0 15px;
+.player button {
+    width: 100%;
+    height: 40px;
     border-radius: 5px;
-    background: var(--colorJaune);
-}
+    background-color: var(--colorJaune);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: var(--colorBlanc);
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+    transition: all 0.3s;
+    
+    
 
-/* .container form .player:nth-child(1) .color{
-    background: var(--colorCyan);
 }
-.container form .player:nth-child(2) .color{
-    background: var(--colorJaune);
+.player button:hover {
+    background-color: #ffb700;
 }
-
-.container form .player:nth-child(3) .color{
-    background: var(--colorBleu);
-}
-
-.container form .player:nth-child(4) .color{
-    background: var(--colorOrange);
-}
-
-.container form .player:nth-child(5) .color{
-    background: var(--colorBlanc);
-} */
 
 
 .playBtn {
-    width: 80vw;
-    height: 10vh;
+    width: 250px;
+    height:50px;
     margin-top: 3vh;
     border-radius: 5px;
     background: #88CB53;
     color: var(--colorBlanc);
     font-size: 20px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: 600;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.playBtn:hover {
+    background: #85df40;
+    transition: all 0.3s;
+}
+
+button.btnValid:disabled {
+    background: rgb(166, 165, 165);
+    cursor: not-allowed;
 }

@@ -16,14 +16,15 @@ export class FinalComponent implements OnInit {
   // this.joueursService.joueurArray
 // public joueursArray:Player[]= PlayersService.getAllPl
 
+    winplayer:Player = this.playersService.winnerPlayer();
+    players:Player[]= this.playersService.players;
+    btnDelet = false;
+
 constructor(private playersService: PlayersService)  {
     }
-
-    winplayer:Player = this.playersService.winnerPlayer()
-    players:Player[]= this.playersService.getAllPlayers()
   ngOnInit(): void {
     
-   
+   console.log(this.playersService.players)
 
     var myConfetti = confettis.create();
     myConfetti({
