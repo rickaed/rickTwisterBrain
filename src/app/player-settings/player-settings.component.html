@@ -1,30 +1,32 @@
 <div class="container">
-    <div class="title">
-        <p>Nombre de joueurs</p>
-        <button>-</button>
-        <p>1</p>
-        <button>+</button>
-    </div>
-    <form >
-       
-        <div class="player">
-            <img [src]="avatar" alt="" />
-            <button class="color"></button>
-            <label  class="avatar" for="avatar">Choisir votre avatar</label>
-            <select name="avatar" id="avatar" #select [(ngModel)]="avatar">
+  <app-player></app-player>
+
+  <form (ngSubmit)="submit()" [formGroup]="form">
+    <fieldset>
+      <legend>Choix du ou des joueurs</legend>
+      <div class="player">
+        <div class="selectContainer">
+          <img [src]="avatar" alt="" />
+          <div class="select">
+            <label class="avatar" for="avatar">Choisir votre avatar</label>
+            <select name="avatar" formControlName="avatar" id="avatar" #select [(ngModel)]="avatar">
               <option value="assets/avatar1.svg">Avatar 1</option>
               <option value="assets/avatar2.svg">Avatar 2</option>
               <option value="assets/avatar3.svg">Avatar 3</option>
               <option value="assets/avatar4.svg">Avatar 4</option>
             </select>
-            <div>
-              <label for="pseudo">Pseudo</label>
-              <input type="text" #pseudo placeholder="inscrire votre pseudo"/>
-            </div>
-          
-            <button class="playBtn" (click)="test()" routerLink="game">Game</button>
+          </div>
         </div>
-    </form>
-    
+        <div class="inputPseudo">
+          <label for="pseudo">Pseudo</label>
+          <div class="inputField">
+            <p *ngIf="form.get('pseudo')?.errors && form.get('pseudo')?.touched">Votre pseudo  doit contenir au <br> minimum 4 caractères</p>
+            <input type="text" formControlName="pseudo" #pseudo placeholder="inscrire votre pseudo" />
+          </div>
+        </div>
+        <button class="btnValid" type="submit" [disabled]="form.invalid" (click)="addPlayers(pseudo, select)">Ajouter</button>
+      </div>
+    </fieldset>
+  </form>
+  <button class="playBtn btnValid" [disabled]="players.length == 0" routerLink="/game">Game</button>
 </div>
-
