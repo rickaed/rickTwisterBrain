@@ -15,6 +15,7 @@ import { QuestionComponent } from './question/question.component';
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 import { ReglesComponent } from './regles/regles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChangeColorDirective } from './change-color.directive';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -28,9 +29,14 @@ import { HttpClientModule } from '@angular/common/http';
     FinalComponent,
     WheelComponent,
     PlayerSettingsComponent,
-    ReglesComponent
     
+    ReglesComponent,
+    QuestionComponent,
+    ChangeColorDirective
   ],
+   
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,
