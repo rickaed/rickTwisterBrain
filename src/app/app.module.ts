@@ -13,9 +13,9 @@ import { WheelComponent } from './wheel/wheel.component';
 
 import { QuestionComponent } from './question/question.component';
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
-import { FormsModule } from '@angular/forms';
 import { ReglesComponent } from './regles/regles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
