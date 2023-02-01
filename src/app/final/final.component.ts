@@ -1,27 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { Joueurs } from '../models/joueurs';
 const confettis = require('canvas-confetti');
+import { Component, forwardRef, Inject, OnInit } from '@angular/core';
+import { PlayersService } from '../services/players.service';
+import { Player } from '../models/player-model';
 
 
 @Component({
   selector: 'app-final',
   templateUrl: './final.component.html',
-  styleUrls: ['./final.component.css']
+  styleUrls: ['./final.component.css'],
+  
 })
 export class FinalComponent implements OnInit {
+  
 
-  myJoueur1 = new Joueurs('joueur1', '../../assets/avatar1.svg', 'logo1');
-  myJoueur2 = new Joueurs('joueur2', '../../assets/avatar2.svg', 'logo2');
-  myJoueur3 = new Joueurs('joueur3', '../../assets/avatar3.svg', 'logo3','winner');
-  myJoueur4 = new Joueurs('joueur4', '../../assets/avatar4.svg', 'logo4');
-  joueurArray = [this.myJoueur1, this?.myJoueur2, this?.myJoueur3, this?.myJoueur4];
+  // this.joueursService.joueurArray
+// public joueursArray:Player[]= PlayersService.getAllPl
 
+    winplayer:Player = this.playersService.winnerPlayer();
+    players:Player[]= this.playersService.players;
+    btnDelet = false;
 
-
-  constructor() { }
-
-
+constructor(private playersService: PlayersService)  {
+    }
   ngOnInit(): void {
+    
+   console.log(this.playersService.players)
+
     var myConfetti = confettis.create();
     myConfetti({
       particleCount: 1000,

@@ -5,13 +5,12 @@ import { GameComponent } from './game/game.component';
 import { HomeComponent } from './home/home.component';
 import { ParameterComponent } from './parameter/parameter.component';
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
-import { PlayerComponent } from './player/player.component';
+import {PlayerComponent} from './player/player.component';
 import { ReglesComponent } from './regles/regles.component';
 import { WheelComponent } from './wheel/wheel.component';
 
 const routes: Routes = [
 {path : '',component: HomeComponent},
-
 {path : 'home',component: HomeComponent},
 // <a [routerLink]="['/home']">HOME</a>
 {path : 'player',component: PlayerComponent},
@@ -28,14 +27,6 @@ const routes: Routes = [
 // <a [routerLink]="['/final']">FINAL</a>
 {path : 'wheel',component: WheelComponent},
 // <a [routerLink]="['/wheel']">WHEEL</a>
-
-
-
-
-
-
-
-
 ];
 
 @NgModule({
