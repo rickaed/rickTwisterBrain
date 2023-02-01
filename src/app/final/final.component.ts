@@ -1,7 +1,7 @@
 const confettis = require('canvas-confetti');
 import { Component, forwardRef, Inject, OnInit } from '@angular/core';
-import { PlayersService } from '../players.service';
-import { Joueurs } from '../models/joueurs';
+import { PlayersService } from '../services/players.service';
+import { Player } from '../models/player-model';
 
 
 @Component({
@@ -11,18 +11,20 @@ import { Joueurs } from '../models/joueurs';
   
 })
 export class FinalComponent implements OnInit {
+  
 
+  // this.joueursService.joueurArray
+// public joueursArray:Player[]= PlayersService.getAllPl
 
-public joueursArray:Joueurs[]= this.joueursService.joueurArray
+    winplayer:Player = this.playersService.winnerPlayer();
+    players:Player[]= this.playersService.players;
+    btnDelet = false;
 
-  constructor(@Inject(forwardRef(() => PlayersService)) private joueursService : PlayersService) {
-    console.log(this.joueursService.myJoueur1.image);
-    
+constructor(private playersService: PlayersService)  {
     }
-
-
   ngOnInit(): void {
-   
+    
+   console.log(this.playersService.players)
 
     var myConfetti = confettis.create();
     myConfetti({
