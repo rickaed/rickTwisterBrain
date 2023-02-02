@@ -33,16 +33,16 @@ export class PlayersService {
     // }
   ];
   playerList=new BehaviorSubject(this.players)
-
+//methode de creation d'un joueur
   addPlayer(pseudo:string, avatar:string,){
    
     const player:Player ={id:this.players.length+1, pseudo:pseudo,avatar:avatar,score: 0}
     this.players.push(player);
    
   }
-
-  removePlayer(i:number){
-    this.players.splice(i,1)
+//permet de supprimer un joeur dans le tableau
+  removePlayer(index:number){
+    this.players.splice(index,1)
   }
   getAllPlayers(): Player[] {
     
