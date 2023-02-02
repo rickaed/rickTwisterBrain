@@ -15,7 +15,7 @@ export interface Response {
 export class QuestionService implements OnInit {
 
 public generalUrl : string = 'https://opentdb.com/api.php?amount=10'
-public easyUrl : string = 'https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=multiple'
+public easyUrl : string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
 public mediumUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
 public hardUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
 datas:any;
