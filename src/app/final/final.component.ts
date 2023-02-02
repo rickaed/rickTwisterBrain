@@ -16,7 +16,7 @@ export class FinalComponent implements OnInit {
   // this.joueursService.joueurArray
 // public joueursArray:Player[]= PlayersService.getAllPl
 
-    winplayer:Player = this.playersService.winnerPlayer();
+    // winplayer:Player = this.playersService.winnerPlayer();
     players:Player[]= this.playersService.players;
     btnDelet = false;
 

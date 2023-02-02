@@ -1,6 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Question } from 'src/app/question.interface';
 import { BehaviorSubject, Subject, tap } from 'rxjs';
 export interface Response {
   response_code:number,
