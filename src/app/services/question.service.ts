@@ -19,10 +19,10 @@ public easyUrl : string = 'https://opentdb.com/api.php?amount=1&category=21&diff
 public mediumUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
 public hardUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
 datas:any;
-questions:any; 
+questions:any;
 
 constructor(private http : HttpClient){ this.getEasyQuestion()}
-  
+
 
 getEasyQuestion(){
  return this.http.get<any>(this.easyUrl).pipe(
@@ -31,7 +31,7 @@ getEasyQuestion(){
       this.questions = new BehaviorSubject(data.results);
     })
   )
-  
+
 }
 getMediumQuestion(){
   this.http.get(this.mediumUrl).subscribe(data => {
@@ -43,7 +43,26 @@ getHardQuestion(){
     return data
   });
 }
+
+randomiseAnswers(array: string[]) {
+  let currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+  console.log(currentIndex);
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+
 ngOnInit(): void {
- 
+
 }
 }
