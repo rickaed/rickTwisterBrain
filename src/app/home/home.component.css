@@ -11,7 +11,7 @@
     max-height: 50vh;
     display: block;
     margin:0 auto;
-   
+
 }
 
 .btnHomes {
@@ -24,28 +24,52 @@
 .btnRegles,
 .btnJouer {
     height: 8vh;
-    width: 75vw;
+    width: 25vw;
     border-radius: 10px;
     color: white;
     font-size: 20px;
-    cursor: grab;
+    cursor: pointer;
+    border: none;
 }
 
 .btnJouer {
     background-color: var(--colorJaune);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.btnJouer:hover{
+  box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem var(--colorJaune),
+    0 0 0.8rem var(--colorJaune),
+    0 0 2.8rem var(--colorJaune),
+    inset 0 0 1.3rem var(--colorJaune);
+    transition: all 0.3s;
 }
 
 .btnRegles {
     background-color: var(--colorOrange);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btnRegles:hover{
+  box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem var(--colorOrange),
+    0 0 0.8rem var(--colorOrange),
+    0 0 2.8rem var(--colorOrange),
+    inset 0 0 1.3rem var(--colorOrange);
+    transition: all 0.3s;
 }
 
 .btnParametres {
     height: 3vh;
-    width: 40vw;
+    width: 8vw;
     border-radius: 10px;
     position: center;
     background-color: var(--colorBleu);
     color: white;
     font-size: 12px;
-    cursor: grab;
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
