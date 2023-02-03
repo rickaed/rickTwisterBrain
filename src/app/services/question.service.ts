@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Question } from 'src/app/question.interface';
 import { BehaviorSubject, Subject, tap } from 'rxjs';
+import { CategoriesService } from './categories.service';
 export interface Response {
   response_code:number,
   results:[]
@@ -14,6 +15,7 @@ export interface Response {
 
 export class QuestionService implements OnInit {
 
+
 public generalUrl : string = 'https://opentdb.com/api.php?amount=10'
 public easyUrl : string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
 public mediumUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
@@ -21,7 +23,26 @@ public hardUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=diff
 datas:any;
 questions:any;
 
-constructor(private http : HttpClient){ this.getEasyQuestion()}
+constructor(private http : HttpClient, private categoriesServ : CategoriesService ){ this.getEasyQuestion()}
+
+setCategoriesForm() {
+  return this.categoriesServ.categoriesChoice
+}
+setDiffucltiesForm(){
+  return ["easy", "medium", "hard", "mixte"]
+}
+setTypesForm() {
+  return ["multiple", "boolean", "mixte"]
+}
+
+setDefaultParameterForm() {
+  return {
+    nbQuestions: 10,
+    type: "multiple",
+    categorie: "",
+    difficulty: "",
+  }
+};
 
 
 getEasyQuestion(){
