@@ -8,27 +8,27 @@ export class CategoriesService {
   categoriesChoice: Category[] = [
     {
         name: "Aléatoire",
-        id: ""
+        value : null
     },
     {
         name: "Culture général",
-        id: 9
+        value: 9
     },
     {
         name: "Sport",
-        id: 21
+        value: 21
     },
     {
         name: "Histoire",
-        id: 23
+        value: 23
     },
     {
         name: "Art",
-        id: 25
+        value: 25
     },
     {
         name: "Manga",
-        id: 31
+        value: 31
     },
 ]
 }
