@@ -12,16 +12,12 @@ import { Player } from '../models/player-model';
 })
 export class FinalComponent implements OnInit {
   
-
-  // this.joueursService.joueurArray
-// public joueursArray:Player[]= PlayersService.getAllPl
-
-    // winplayer:Player = this.playersService.winnerPlayer();
     players:Player[]= this.playersService.players;
     btnDelet = false;
 
-constructor(private playersService: PlayersService)  {
-    }
+constructor(private playersService: PlayersService)  {}
+
+
   ngOnInit(): void {
     
    console.log(this.playersService.players)
@@ -37,10 +33,7 @@ constructor(private playersService: PlayersService)  {
      angle: 90,
      startVelocity: 40,
      drift : -5, 
-    
-     
-      // any other options from the global
-      // confetti function
+ 
     });
   }
 
@@ -51,9 +44,7 @@ constructor(private playersService: PlayersService)  {
       spread: 560,
       propagation: 1589
 
-      // any other options from the global
-      // confetti function
-
+    
     });
   }
 }

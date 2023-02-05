@@ -1,26 +1,15 @@
-<div class="container">
-
     <div class="header">
         <app-player [btnDelet] = "btnDelet"></app-player>
-
         <div class="joueur" *ngFor="let player of players">
             <img class="avatar avatar1" src={{player.avatar}} >
             <p class="txt_score">{{player.score}}</p>
-
-            <!-- <img class="avatar avatar2" [src]="[myJoueur2.image]" [alt]="[myJoueur2.alt]">
-            <p class="txt_score">{{myJoueur2.score}} </p>
-            <img class="avatar avatar3" [src]="[myJoueur3.image]" [alt]="[myJoueur3.alt]">
-            <p class="txt_score">{{myJoueur3.score}} </p>
-            <img class="avatar avatar4" [src]="[myJoueur4.image]" [alt]="[myJoueur4.alt]">
-            <p class="txt_score">{{myJoueur4.score}} </p>  -->
         </div>
     </div>
 
     <div class="main">
-        <button  (click)="showConfetti()">confettis</button> 
+       
         <p class="bravo" (click)="showConfetti()" > Bravo <img
-                src={{players[0].avatar}}></p>
-        
+                src={{players[2].avatar}}></p>  
         
     </div>
 
@@ -33,10 +22,5 @@
                 <span class="linemoove"></span>
                 <span [routerLink]="['/game']">ReJouer</span>
             </div>
-
-
         </div>
     </div>
-
-
-</div>
