@@ -1,21 +1,21 @@
     <div class="header">
         <app-player [btnDelet] = "btnDelet"></app-player>
+        <!-- pour afficher mes joueurs -->
         <div class="joueur" *ngFor="let player of players">
-            <img class="avatar avatar1" src={{player.avatar}} >
+            <img class="avatar" src={{player.avatar}} >
             <p class="txt_score">{{player.score}}</p>
         </div>
     </div>
 
     <div class="main">
-       
         <p class="bravo" (click)="showConfetti()" > Bravo <img
-                src={{players[2].avatar}}></p>  
-        
+                src={{players[2].avatar}}></p>   
     </div>
 
     <div class="footer">
         <div class="boutons" (click)="showConfetti()">
             <div class="btn2">
+                <!-- 4spans pour faire mes 4 contours de mon bouton  -->
                 <span class="linemoove"></span>
                 <span class="linemoove"></span>
                 <span class="linemoove"></span>

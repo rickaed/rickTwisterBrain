@@ -2,8 +2,7 @@
     width: 100%;
     height: 25vh;
     display: flex;
-    flex-direction: row;
-   
+    flex-direction: row;  
 }
 
 
@@ -14,7 +13,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 }
 
 .bravo {
@@ -32,6 +30,7 @@
     -webkit-text-fill-color: transparent;
 }
 
+/*avatar qui ckignotte toutes les 20%*/
 @keyframes clignote {
     0% {
         opacity: 1;
@@ -73,7 +72,6 @@
     text-decoration: none;
     padding: 15px 20px;
     transition: 2s ease-in;
-    font-size: 1rem;
- 
+    font-size: 1rem; 
 }
 
