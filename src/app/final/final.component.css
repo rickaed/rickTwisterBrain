@@ -96,7 +96,7 @@
     font-family: 'Crimson Text', serif;
 }
 
-/* btn jouer*/
+/* btn jouer
 .btn2 {
     position: relative;
     padding: 15px 20px;
@@ -195,7 +195,7 @@
     100% {
         bottom: 100%;
     }
-}
+} */
 
 /********** 2joueurs*************/
 /* .triangle {
@@ -212,3 +212,9 @@
 	border-width:100px;
     
 } */
+
+.btn-contact{
+    background-color: #d6680e;
+    height: 25px;
+    cursor: pointer;
+}

@@ -17,13 +17,12 @@
     </div>
 
     <div class="main">
-        <button (click)="showConfetti()">confettis</button> 
+        <button  (click)="showConfetti()">confettis</button> 
         <p class="bravo" (click)="showConfetti()" > Bravo <img
                 src={{players[0].avatar}}></p>
         
         
     </div>
-
 
     <div class="footer">
         <div class="boutons" (click)="showConfetti()">
@@ -34,6 +33,10 @@
                 <span class="linemoove"></span>
                 <span [routerLink]="['/game']">ReJouer</span>
             </div>
+
+
         </div>
     </div>
+
+
 </div>

@@ -26,22 +26,30 @@ constructor(private playersService: PlayersService)  {
     
    console.log(this.playersService.players)
 
-    var myConfetti = confettis.create();
+   const myCanvas = document.createElement('canvas');
+   document.body.appendChild(myCanvas);
+
+    const myConfetti = confettis.create(myCanvas, {resize: true, useWorker:true});
     myConfetti({
-      particleCount: 1000,
-      spread: 160,
-      propagation: 260
+      particleCount: 5000,
+      spread: 10240,
+     propagation: 5260,
+     angle: 90,
+     startVelocity: 40,
+     drift : -5, 
+    
+     
       // any other options from the global
       // confetti function
     });
   }
 
   showConfetti() {
-    var myConfetti = confettis.create();
+    const myConfetti = confettis.create();
     myConfetti({
       particleCount: 1000,
-      spread: 160,
-      propagation: 589
+      spread: 560,
+      propagation: 1589
 
       // any other options from the global
       // confetti function
