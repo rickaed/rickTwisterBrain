@@ -13,18 +13,20 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    -webkit-text-stroke: 0.5px rgb(102, 64, 241); /*contour du texte bravo */
 }
 
 .bravo {
     text-transform: uppercase;
+
     font-size: 2.5rem;
     /*texte clignottant*/
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-name: clignote;
     animation-iteration-count: infinite;
     transition: ease-out;
     /*degradé texte*/
-    background: linear-gradient(100deg, #d6680e 0%, #1e65ff 100%);
+    background: linear-gradient(100deg, #d61d04 0%, #f7e927 50%, #02297e 100%);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
