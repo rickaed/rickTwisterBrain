@@ -1,4 +1,4 @@
-<form #paramQuestions="ngForm" (ngSubmit)="nbQuestions.valid && onSubmit()">
+<form #paramQuestions="ngForm" (ngSubmit)="nbQuestions.valid ">
     <h1 class="title1">Parametre Question</h1>
 
     <section class="top">
@@ -62,7 +62,7 @@
 
 
     <section class="bot">
-        <button class="btn" routerLink="/home" type="submit" [disabled]="nbQuestions.invalid">Back</button>
+        <button class="btn"  type="submit" routerLink="/home" (click)="onSubmit()" [disabled]="nbQuestions.invalid">Back</button>
     </section>
 
 </form>

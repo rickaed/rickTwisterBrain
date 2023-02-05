@@ -1,10 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Question } from 'src/app/question.interface';
-import { BehaviorSubject, Subject, tap } from 'rxjs';
-import { CategoriesService } from './categories.service';
-import { LevelService } from './level.service';
-import { TypesService } from './types.service';
+import { BehaviorSubject, tap } from 'rxjs';
+import { QuestionParameterService } from './question-parameter.service';
 export interface Response {
   response_code: number,
   results: []
@@ -17,6 +14,7 @@ export interface Response {
 
 export class QuestionService implements OnInit {
 
+  urlApiQuestions: string = 'https://opentdb.com/api.php?';
 
   public generalUrl: string = 'https://opentdb.com/api.php?amount=10'
   public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
@@ -27,29 +25,13 @@ export class QuestionService implements OnInit {
 
   constructor(
     private http: HttpClient,
-     private categoriesServ: CategoriesService,
-     private levelServ:LevelService,
-     private typesServ:TypesService
-     ) { this.getEasyQuestion() }
+    private paramServ: QuestionParameterService,
+  ) { this.getEasyQuestion() }
 
-  setCategoriesForm() {
-    return this.categoriesServ.categoriesChoice
-  }
-  setDiffucltiesForm() {
-    return this.levelServ.lvl
-        }
-  setTypesForm() {
-    return this.typesServ.types
-  }
+  // ⬇ RECUPERATION DES QUESTIONS ET TRAITEMENT ⬇
 
-  setDefaultParameterForm() {
-    return {
-      nbQuestions: 8,
-      type: "multiple",
-      categorie: null,
-      difficulty: null,
-    }
-  };
+
+  
 
 
   getEasyQuestion() {

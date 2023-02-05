@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ParamQuestions } from '../models/param-question.model';
-import { QuestionService } from '../services/question.service';
-import { Category } from "../models/category";
+import { Choice } from "../models/choice.interface.";
+import { ApiQuestionService } from '../services/api-question.service';
+import { QuestionParameterService } from '../services/question-parameter.service';
 
 @Component({
   selector: 'app-parameter',
@@ -10,60 +10,28 @@ import { Category } from "../models/category";
 })
 export class ParameterComponent implements OnInit {
 
+  constructor(
+    private paramsQuestion: QuestionParameterService,
+    private apiQuestionServ: ApiQuestionService) { };
 
-  constructor(private questionServ: QuestionService) { }
-
-  // pour test url
-  // url:string=`https://opentdb.com/api.php?amount=${this.paramQuestion.nbQuestions}${'&category='+this.paramQuestion.categorie.value}${'&difficulty='+this.paramQuestion.difficulty}${'&type='+this.paramQuestion.type}`;
-
-  //declaration necessaire au form
+  // ⬇ DECLARATION NECESSAIRE AU FORM ⬇
   paramQuestion!: any;/*soucis d'assignation de type */
-  categoriesTab!: Category[];
-  difficultiesTab!: Category[];
-  typesTab!: Category[];
+  categoriesTab!: Choice[];
+  difficultiesTab!: Choice[];
+  typesTab!: Choice[];
 
   ngOnInit(): any {
-    this.paramQuestion = this.questionServ.setDefaultParameterForm();
-    this.categoriesTab = this.questionServ.setCategoriesForm();
-    this.difficultiesTab = this.questionServ.setDiffucltiesForm();
-    this.typesTab = this.questionServ.setTypesForm();
+    // ⬇ INITIALISATION AVEC LES PARAM PAR DEFAUT DU FORMULAIRE ⬇
+    this.paramQuestion = this.paramsQuestion.setDefaultParameterForm();
+    this.categoriesTab = this.paramsQuestion.setCategoriesForm();
+    this.difficultiesTab = this.paramsQuestion.setDiffucltiesForm();
+    this.typesTab = this.paramsQuestion.setTypesForm();
 
-    let url:string= `https://opentdb.com/api.php?amount=${this.paramQuestion.nbQuestions}`
-    const urlApiVar = [
-      {
-        name: '&category=',
-        value: this.paramQuestion.categorie,
-      },
-      {
-        name: '&difficulty=',
-        value: this.paramQuestion.difficulty
-      },
-      {
-        name: '&type=',
-        value: this.paramQuestion.type
-      }
-    ];
-
-    
-   let apiVars = urlApiVar.forEach(apiVar => {
-        if (apiVar.value !== null) {
-          console.log('dans la boucle :', apiVar.name + apiVar.value)
-          url = url + apiVar.name + apiVar.value;
-          // return (apiVar.name + apiVar.value)
-        } else {
-          url = url
-        }
-      });
-    
-    console.log("url de l'API :",url)
-  
-    
-};
-// queyionAPI:string=`https://opentdb.com/api.php?amount=${this.paramQuestion.nbQuestions}${'&category='+this.paramQuestion.categorie.value}${'&difficulty='+this.paramQuestion.difficulty}${'&type='+this.paramQuestion.type}`
+  };
 
 
-
-onSubmit() {
-  throw new Error('Method not implemented.');
-};
+  // ⬇ ok ⬇
+  async onSubmit() {
+    this.apiQuestionServ.getParamQuestion(this.paramQuestion.nbQuestions,this.paramQuestion.categorie, this.paramQuestion.difficulty, this.paramQuestion.type)
+  };
 }
