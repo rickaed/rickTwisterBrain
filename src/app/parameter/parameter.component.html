@@ -8,7 +8,7 @@
 <!-- slection du nombre de question -->
         <fieldset class="nb-question">
             <!-- dir="rtl => type de direction entre contenu et fleche" -->
-            <input dir="rtl" id="nbQuestions" name="nbQuestions" type="number" value="10"
+            <input dir="rtl" id="nbQuestions" name="nbQuestions" type="number" value="2"
                 [(ngModel)]="paramQuestion.nbQuestions" #nbQuestions="ngModel" min="1" max="10" required>
             <!-- au cas ou pour eviter les erreur : -->
             <div *ngIf="nbQuestions.errors && paramQuestions.submitted">
