@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
+import { ApiQuestionService } from './api-question.service';
 export interface Response {
   response_code: number,
   results: []
@@ -13,7 +14,7 @@ export interface Response {
 
 export class QuestionService implements OnInit {
 
-  urlApiQuestions: string = 'https://opentdb.com/api.php?';
+  // urlApiQuestions: string = 'https://opentdb.com/api.php?';
 
   public generalUrl: string = 'https://opentdb.com/api.php?amount=10'
   public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
@@ -24,11 +25,16 @@ export class QuestionService implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private apiServ:ApiQuestionService,
   ) { this.getEasyQuestion() }
 
   // ⬇ RECUPERATION DES QUESTIONS ET TRAITEMENT ⬇
 
-
+getQuestions(){
+this.apiServ.getUrlAPI()
+.subscribe(quest=> 
+  )
+}
   
 
 

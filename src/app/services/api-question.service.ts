@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { __values } from 'tslib';
-import { Choice } from '../models/choice.interface.';
 import { ParamQuestions } from '../models/param-question.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiQuestionService {
+  constructor(private http: HttpClient){}
   // valeur par defaut envoyer des question du jeu
   defautValueParam: ParamQuestions = {
     nbQuestions: 2,
@@ -86,5 +87,9 @@ export class ApiQuestionService {
     // console.log("normalement mon url", urlApi)
     return urlApi;
   };
+
+  getUrlAPI(){
+return this.http.get(this.setParamQuestions());
+  }
 
 }
