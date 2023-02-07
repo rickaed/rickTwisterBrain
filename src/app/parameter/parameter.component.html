@@ -16,30 +16,22 @@
                 <span *ngIf="nbQuestions.errors['min']">Le nombre doit etre au moins 1.</span>
                 <span *ngIf="nbQuestions.errors['max']">Le nombre doit etre au max 10.</span>
             </div>
-            <!-- <select name="nbQuestion" id="nb-question">
-            <option *ngFor="let nbQuestion of nbQuestionList">{{nbQuestion}}</option>    
-        </select> -->
         </fieldset>
     </section>
 
     <section class="mid">
         <div>
-            Thematique
+            <!--selection--> Thematique
         </div>
-
         <fieldset>
-            <!-- <legend>
-            Catégorie
-        </legend> -->
             <select id="categorie" name="categorie" [(ngModel)]="paramQuestion.category" required>
                 <option [value]="choice.value" *ngFor="let choice of categoriesTab">{{choice.name}}</option>
             </select>
         </fieldset>
 
         <div>
-            Difficulté
+            <!--selection--> Difficulté
         </div>
-
         <fieldset>
             <select id="difficulty" name="difficulty" [(ngModel)]="paramQuestion.difficulty" required>
                 <option [value]="lvl.value" *ngFor="let lvl of difficultiesTab">{{lvl.name}}</option>
@@ -47,17 +39,14 @@
         </fieldset>
 
         <div>
-            type de question
+            <!--selection--> Type de question
         </div>
-
         <fieldset>
             <select id="type" name="type" type="url" value="multiple" [(ngModel)]="paramQuestion.type" required>
                 <option [value]="type.value" *ngFor="let type of typesTab">{{type.name}}</option>
             </select>
         </fieldset>
     </section>
-
-
 
     <section class="bot">
         <button class="btn" type="submit" routerLink="/home" (click)="onSubmit()"

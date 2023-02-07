@@ -19,6 +19,8 @@ public mediumUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=me
 public hardUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
 datas:any;
 questions:any;
+timeLeft: number = 10;
+interval:any;
 
 constructor(private http : HttpClient){ this.getEasyQuestion()}
 
@@ -60,6 +62,8 @@ randomiseAnswers(array: string[]) {
   }
   return array;
 }
+
+
 
 ngOnInit(): void {
 
