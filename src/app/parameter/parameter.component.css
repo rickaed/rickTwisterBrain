@@ -22,6 +22,7 @@ form {
     width: 90%;
     margin-top: 5%;
     color: white;
+
     height: fit-content;
 }
 
@@ -47,6 +48,7 @@ section {
 .top>*:nth-child(even) {
     background-color: var(--colorJaune);
     color: var(--colorOrange);
+
 }
 
 .top>div {
@@ -82,6 +84,7 @@ section {
 
 .mid {
     flex-direction: column;
+
 }
 
 .mid>div {
@@ -91,6 +94,7 @@ section {
     justify-content: center;
     align-items: center;
 }
+
 
 .mid>*:nth-child(odd) {
     background-color: var(--colorJaune);
@@ -103,6 +107,11 @@ section {
     align-self: center;
     background-color: var(--colorOrange);
     color: var(--font-color);
+}
+.mid>*>select{
+    display: block;
+text-align: center;
+margin: auto;
 }
 
 .mid>*>select {

@@ -1,5 +1,7 @@
+
 import { Component } from '@angular/core';
 import { Choice } from "../models/choice.interface";
+
 import { ParamQuestions } from '../models/param-question.model';
 import { ApiQuestionService } from '../services/api-question.service';
 
@@ -8,6 +10,7 @@ import { ApiQuestionService } from '../services/api-question.service';
   templateUrl: './parameter.component.html',
   styleUrls: ['./parameter.component.css']
 })
+
 export class ParameterComponent {
 
   constructor(
@@ -79,9 +82,6 @@ export class ParameterComponent {
       value: "boolean"
     },
   ];
-
-
-
 
   // ⬇ ok ⬇
   onSubmit() {
