@@ -30,11 +30,11 @@ export class QuestionService implements OnInit {
 
   // ⬇ RECUPERATION DES QUESTIONS ET TRAITEMENT ⬇
 
-getQuestions(){
-this.apiServ.getUrlAPI()
-.subscribe(quest=> 
-  )
-}
+// getQuestions(){
+// this.apiServ.getUrlAPI()
+// .subscribe(quest=> 
+//   )
+// }
   
 
 
