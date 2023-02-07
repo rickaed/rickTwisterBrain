@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Choice } from "../models/choice.interface";
 import { ParamQuestions } from '../models/param-question.model';
@@ -8,13 +9,14 @@ import { ApiQuestionService } from '../services/api-question.service';
   templateUrl: './parameter.component.html',
   styleUrls: ['./parameter.component.css']
 })
-export class ParameterComponent {
 
+export class ParameterComponent {
   constructor(
     private apiQuestionServ: ApiQuestionService) { };
 
   // ⬇ DECLARATION NECESSAIRE AU FORM ⬇
   paramQuestion: ParamQuestions = this.apiQuestionServ.getParamdefaut();
+
 
   // ⬇ description dans le titre ⬇
   categoriesTab: Choice[] = [
@@ -44,6 +46,7 @@ export class ParameterComponent {
     },
   ];
 
+
   // ⬇ description dans le titre ⬇
   difficultiesTab: Choice[] = [
     {
@@ -64,6 +67,7 @@ export class ParameterComponent {
     }
   ];
 
+
   // ⬇ description dans le titre ⬇
   typesTab: Choice[] = [
     {
@@ -79,9 +83,6 @@ export class ParameterComponent {
       value: "boolean"
     },
   ];
-
-
-
 
   // ⬇ ok ⬇
   onSubmit() {
