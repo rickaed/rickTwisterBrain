@@ -7,7 +7,7 @@ import { ParamQuestions } from '../models/param-question.model';
   providedIn: 'root'
 })
 export class ApiQuestionService {
-// valeur par defaut envoyer des question du jeu
+  // valeur par defaut envoyer des question du jeu
   defautValueParam: ParamQuestions = {
     nbQuestions: 2,
     category: null,
@@ -19,7 +19,7 @@ export class ApiQuestionService {
   // ⬇ CONSTITUTION DE L'ADRESSE API ⬇
 
   // envoie des valeur par defaut au formulaire
-   getParamdefaut() {
+  getParamdefaut() {
     return this.defautValueParam
   }
 
@@ -34,7 +34,7 @@ export class ApiQuestionService {
 
   // construction tableau pour la suite de la construction APIUrl
   paramQuestion(param: any) {
-    console.log('mon param', param);
+    // console.log('mon param', param);
 
     let i = 0;
     let urlconst = [
@@ -58,15 +58,15 @@ export class ApiQuestionService {
 
     for (const key in param) {
       // if (Object.prototype.hasOwnProperty.call(param, key)) {
-        urlconst[i].value = param[key];
-        console.log("ajout de ", urlconst[i].value);
-        i++
+      urlconst[i].value = param[key];
+      // console.log("ajout de ", urlconst[i].value);
+      i++
       // }
 
-      console.log('mon tableau', urlconst)
+      // console.log('mon tableau', urlconst)
 
     };
-    console.log("envoie au construc url", urlconst)
+    // console.log("envoie au construc url", urlconst)
     return this.urlConstructor(urlconst)
   }
 
@@ -75,14 +75,15 @@ export class ApiQuestionService {
   urlConstructor(array: any) {
     let urlApi = `https://opentdb.com/api.php?`
     array.forEach((el: { value: string | number | null; name: string; }) => {/* bouclage sur les éléments de la variable urlApiVar et assemblage de ces dernier si il ne sont pas vide*/
-      if (el.value !== null && el.value !=="null") {
+      if (el.value !== null && el.value !== "null") {
         urlApi = urlApi + el.name + el.value;
-        console.log("ajourt de :", el.name, el.value);
+        // console.log("ajourt de :", el.name, el.value);
       } else {
         urlApi = urlApi
-        console.log('on touche pas :', urlApi);
+        // console.log('on touche pas :', urlApi);
       }
-    }); console.log("normalement mon url", urlApi)
+    });
+    // console.log("normalement mon url", urlApi)
     return urlApi;
   };
 

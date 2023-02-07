@@ -2,10 +2,10 @@
     <h1 class="title1">Parametre Question</h1>
 
     <section class="top">
-        <div class="title">
+        <div>
             Nombre de questions
         </div>
-<!-- slection du nombre de question -->
+        <!-- slection du nombre de question -->
         <fieldset class="nb-question">
             <!-- dir="rtl => type de direction entre contenu et fleche" -->
             <input dir="rtl" id="nbQuestions" name="nbQuestions" type="number" value="2"
@@ -36,33 +36,32 @@
             </select>
         </fieldset>
 
+        <div>
+            Difficulté
+        </div>
+
         <fieldset>
-            <div>
-                Difficulté
-            </div>
             <select id="difficulty" name="difficulty" [(ngModel)]="paramQuestion.difficulty" required>
                 <option [value]="lvl.value" *ngFor="let lvl of difficultiesTab">{{lvl.name}}</option>
             </select>
         </fieldset>
-    </section>
 
-    <fieldset>
         <div>
             type de question
         </div>
-        <select id="type" name="type" type="url" value="multiple" [(ngModel)]="paramQuestion.type" required>
-            <option [value]="type.value" *ngFor="let type of typesTab">{{type.name}}</option>
-        </select>
-    </fieldset>
-    <fieldset>
-        <div>
-            <p>mon adresse url</p>
-        </div>
-    </fieldset>
+
+        <fieldset>
+            <select id="type" name="type" type="url" value="multiple" [(ngModel)]="paramQuestion.type" required>
+                <option [value]="type.value" *ngFor="let type of typesTab">{{type.name}}</option>
+            </select>
+        </fieldset>
+    </section>
+
 
 
     <section class="bot">
-        <button class="btn"  type="submit" routerLink="/home" (click)="onSubmit()" [disabled]="nbQuestions.invalid">Back</button>
+        <button class="btn" type="submit" routerLink="/home" (click)="onSubmit()"
+            [disabled]="nbQuestions.invalid">Back</button>
     </section>
 
 </form>

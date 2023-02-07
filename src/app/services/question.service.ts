@@ -1,7 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
-import { ApiQuestionService } from './api-question.service';
 export interface Response {
   response_code: number,
   results: []
@@ -16,16 +15,15 @@ export class QuestionService implements OnInit {
 
   urlApiQuestions: string = 'https://opentdb.com/api.php?';
 
-  public generalUrl: string = 'https://opentdb.com/api.php?amount=1'
+  public generalUrl: string = 'https://opentdb.com/api.php?amount=10'
   public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
-  public mediumUrl: string = 'https://opentdb.com/api.php?amount=1&difficulty=medium'
-  public hardUrl: string = 'https://opentdb.com/api.php?amount=1&difficulty=difficult'
+  public mediumUrl: string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
+  public hardUrl: string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
   datas: any;
   questions: any;
 
   constructor(
     private http: HttpClient,
-    private myApiUrl:ApiQuestionService,
   ) { this.getEasyQuestion() }
 
   // ⬇ RECUPERATION DES QUESTIONS ET TRAITEMENT ⬇
@@ -35,7 +33,7 @@ export class QuestionService implements OnInit {
 
 
   getEasyQuestion() {
-    return this.http.get<any>(this.myApiUrl.setParamQuestions()).pipe(
+    return this.http.get<any>(this.easyUrl).pipe(
       tap((data) => {
         // this.questions.next(data.results)
         this.questions = new BehaviorSubject(data.results);

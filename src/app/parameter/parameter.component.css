@@ -96,10 +96,7 @@ section {
     align-items: center;
 }
 
-.mid>select {
-    margin: 10px 0;
-    height: 2rem;
-}
+
 
 
 .mid>*:nth-child(odd) {
@@ -109,8 +106,15 @@ section {
 }
 
 .mid>*:nth-child(even) {
+    width: 80%;
+    align-self: center;
     background-color: var(--colorOrange);
     color: var(--font-color);
+}
+.mid>*>select{
+    display: block;
+text-align: center;
+margin: auto;
 }
 
 .mid>*:nth-child(n) {
