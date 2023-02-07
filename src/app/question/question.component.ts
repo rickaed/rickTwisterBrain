@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { ThisReceiver } from '@angular/compiler';
 import { Component, ElementRef, Input, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Route, Router, Routes } from '@angular/router';
-import { Question } from 'src/app/question.interface';
 import { Player } from '../models/player-model';
 import { PlayersService } from '../services/players.service';
 import { QuestionService } from '../services/question.service';
