@@ -5,7 +5,6 @@ import { ApiQuestionService } from './api-question.service';
 export interface Response {
   response_code: number,
   results: []
-
 }
 
 @Injectable({
@@ -14,7 +13,16 @@ export interface Response {
 
 export class QuestionService implements OnInit {
 
-  // urlApiQuestions: string = 'https://opentdb.com/api.php?';
+
+public generalUrl : string = 'https://opentdb.com/api.php?amount=10'
+public easyUrl : string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
+public mediumUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
+public hardUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
+datas:any;
+questions:any;
+timeLeft: number = 10;
+interval:any;
+
 
   public generalUrl: string = 'https://opentdb.com/api.php?amount=10'
   public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
@@ -76,7 +84,5 @@ export class QuestionService implements OnInit {
     return array;
   }
 
-  ngOnInit(): void {
 
-  }
 }

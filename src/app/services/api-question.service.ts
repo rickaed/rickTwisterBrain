@@ -20,7 +20,8 @@ export class ApiQuestionService {
   // ⬇ CONSTITUTION DE L'ADRESSE API ⬇
 
   // envoie des valeur par defaut au formulaire
-  getParamdefaut() {
+
+  getParamdefaut(): ParamQuestions {
     return this.defautValueParam
   }
 
@@ -58,14 +59,10 @@ export class ApiQuestionService {
     ];
 
     for (const key in param) {
-      // if (Object.prototype.hasOwnProperty.call(param, key)) {
       urlconst[i].value = param[key];
       // console.log("ajout de ", urlconst[i].value);
-      i++
-      // }
-
+      i++      
       // console.log('mon tableau', urlconst)
-
     };
     // console.log("envoie au construc url", urlconst)
     return this.urlConstructor(urlconst)
@@ -78,7 +75,7 @@ export class ApiQuestionService {
     array.forEach((el: { value: string | number | null; name: string; }) => {/* bouclage sur les éléments de la variable urlApiVar et assemblage de ces dernier si il ne sont pas vide*/
       if (el.value !== null && el.value !== "null") {
         urlApi = urlApi + el.name + el.value;
-        // console.log("ajourt de :", el.name, el.value);
+        // console.log("ajout de :", el.name, el.value);
       } else {
         urlApi = urlApi
         // console.log('on touche pas :', urlApi);
