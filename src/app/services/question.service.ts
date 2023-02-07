@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { BehaviorSubject, tap } from 'rxjs';
 import { ApiQuestionService } from './api-question.service';
-
 export interface Response {
   response_code: number,
   results: []
-
 }
 
 @Injectable({
@@ -15,8 +12,6 @@ export interface Response {
 })
 
 export class QuestionService {
-
-
 
 public generalUrl : string = 'https://opentdb.com/api.php?amount=10'
 public easyUrl : string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
@@ -41,12 +36,32 @@ interval:any;
 
   // ⬇ RECUPERATION DES QUESTIONS ET TRAITEMENT ⬇
 
-getQuestions(){
-this.apiServ.getUrlAPI()
-.subscribe(quest=> 
-  )
-}
+// getQuestions(){
+// this.apiServ.getUrlAPI()
+// .subscribe(quest=> 
+//   )
+// }
   
+
+  getEasyQuestion() {
+    return this.http.get<any>(this.easyUrl).pipe(
+      tap((data) => {
+        // this.questions.next(data.results)
+        this.questions = new BehaviorSubject(data.results);
+      })
+    )
+
+  }
+  getMediumQuestion() {
+    this.http.get(this.mediumUrl).subscribe(data => {
+      return data
+    });
+  }
+  getHardQuestion() {
+    this.http.get(this.hardUrl).subscribe(data => {
+      return data
+    });
+  }
 
 
   getEasyQuestion() {

@@ -1,6 +1,5 @@
 
 import { Component, OnInit } from '@angular/core';
-
 import { ApiQuestionService } from '../services/api-question.service';
 
 @Component({
@@ -8,7 +7,6 @@ import { ApiQuestionService } from '../services/api-question.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-
 export class HomeComponent implements OnInit{
 
   // ⬇ BORDEL DE RICK ⬇ c'est pour afficher l'adresse API...normalement c'est vide
@@ -17,6 +15,6 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     // this.urlApi=this.myUrl.setParamQuestions()
     console.log(this.myUrl.setParamQuestions())
-  }  
 
+  }  
 }

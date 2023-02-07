@@ -20,6 +20,7 @@ export class ApiQuestionService {
   // ⬇ CONSTITUTION DE L'ADRESSE API ⬇
 
   // envoie des valeur par defaut au formulaire
+
   getParamdefaut(): ParamQuestions {
     return this.defautValueParam
   }

@@ -13,13 +13,11 @@ import { ApiQuestionService } from '../services/api-question.service';
 
 export class ParameterComponent {
 
-
   constructor(
     private apiQuestionServ: ApiQuestionService) { };
 
   // ⬇ DECLARATION NECESSAIRE AU FORM ⬇
   paramQuestion: ParamQuestions = this.apiQuestionServ.getParamdefaut();
-
 
   // ⬇ description dans le titre ⬇
   categoriesTab: Choice[] = [
@@ -49,7 +47,6 @@ export class ParameterComponent {
     },
   ];
 
-
   // ⬇ description dans le titre ⬇
   difficultiesTab: Choice[] = [
     {
@@ -70,7 +67,6 @@ export class ParameterComponent {
     }
   ];
 
-
   // ⬇ description dans le titre ⬇
   typesTab: Choice[] = [
     {
@@ -86,7 +82,6 @@ export class ParameterComponent {
       value: "boolean"
     },
   ];
-
 
   // ⬇ ok ⬇
   onSubmit() {
