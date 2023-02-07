@@ -1,50 +1,41 @@
+//pour importer mon API canvas confetti
 const confettis = require('canvas-confetti');
 import { Component, forwardRef, Inject, OnInit } from '@angular/core';
 import { PlayersService } from '../services/players.service';
 import { Player } from '../models/player-model';
+import {ConfettisService} from '../confettis.service';
 
 
 @Component({
   selector: 'app-final',
   templateUrl: './final.component.html',
   styleUrls: ['./final.component.css'],
-  
 })
+
+
 export class FinalComponent implements OnInit {
-  
+  //tableau pour mes joueurs
     players:Player[]= this.playersService.players;
+
     btnDelet = false;
 
-constructor(private playersService: PlayersService)  {}
+constructor (public confettisService: ConfettisService, private playersService: 
+  PlayersService) {}
 
 
-  ngOnInit(): void {
-    
-   console.log(this.playersService.players)
-
-   const myCanvas = document.createElement('canvas');
-   document.body.appendChild(myCanvas);
-
-    const myConfetti = confettis.create(myCanvas, {resize: true, useWorker:true});
-    myConfetti({
-      particleCount: 5000,
-      spread: 10240,
-     propagation: 5260,
-     angle: 90,
-     startVelocity: 40,
-     drift : -5, 
- 
-    });
-  }
-
+ngOnInit(){
+  //pour afficher mon API
+  this.showConfetti();
+}
+  
   showConfetti() {
-    const myConfetti = confettis.create();
-    myConfetti({
-      particleCount: 1000,
-      spread: 560,
-      propagation: 1589
-
-    
-    });
+  let canvas = document.querySelector('.canvas') as any;
+  let confetti = confettis.create(canvas, { resize: true });
+  confetti({
+    spread: 170,
+   origin: { y: 0.5 }
+   
+  });
   }
+
 }
