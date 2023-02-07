@@ -9,11 +9,11 @@ import { ApiQuestionService } from '../services/api-question.service';
 export class HomeComponent implements OnInit{
 
   // ⬇ BORDEL DE RICK ⬇ c'est pour afficher l'adresse API...normalement c'est vide
-  urlApi!:string;
+  urlApi!:any;
   constructor(private myUrl:ApiQuestionService){}
   ngOnInit(): void {
-    this.urlApi=this.myUrl.setUrlApi()
-    console.log()
+    // this.urlApi=this.myUrl.setParamQuestions()
+    console.log(this.myUrl.setParamQuestions())
   }
   
 }

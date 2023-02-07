@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { __values } from 'tslib';
 import { Choice } from '../models/choice.interface.';
 import { ParamQuestions } from '../models/param-question.model';
 
@@ -6,56 +7,83 @@ import { ParamQuestions } from '../models/param-question.model';
   providedIn: 'root'
 })
 export class ApiQuestionService {
+// valeur par defaut envoyer des question du jeu
+  defautValueParam: ParamQuestions = {
+    nbQuestions: 2,
+    category: null,
+    difficulty: null,
+    type: 'multiple'
+  };
+
 
   // ⬇ CONSTITUTION DE L'ADRESSE API ⬇
 
-  baseUrlApi: string = `https://opentdb.com/api.php?`/*adresse dédier au tretement plus bas */
-  urlDefautApi: string = `https://opentdb.com/api.php?amount=10`/*adresse par defaut si l'on ne passe pas par parametre */
+  // envoie des valeur par defaut au formulaire
+   getParamdefaut() {
+    return this.defautValueParam
+  }
 
-  urlApiVar: Choice[] = [];/*declaration de ma variable qui va contenir les elements necessaire à la modification de l'URL "baseUrlApi" à envoyer*/
- 
-  getParamQuestion(
-    nb: ParamQuestions["nbQuestions"],
-    cat: ParamQuestions["category"],
-    lvl: ParamQuestions["difficulty"],
-    type: ParamQuestions["type"]) {/*catégorie necessaire à l'URL provenant de ParametreComonent */
-    this.urlApiVar = [
+  // recuperation des elements pour l'APIUrl
+  setParamQuestions(param?: any) {
+    if (param) { //parametre provenant du Formulaire
+      return this.paramQuestion(param)
+    } else {
+      return this.paramQuestion(this.defautValueParam)//parametre par defaut
+    }
+  };
+
+  // construction tableau pour la suite de la construction APIUrl
+  paramQuestion(param: any) {
+    console.log('mon param', param);
+
+    let i = 0;
+    let urlconst = [
       {
         name: 'amount=',
-        value: nb
+        value: 0
       },
       {
         name: '&category=',
-        value: cat,
+        value: null
       },
       {
         name: '&difficulty=',
-        value: lvl
+        value: null
       },
       {
         name: '&type=',
-        value: type
+        value: null
       }
-    ]
-  };
+    ];
 
-  urlConstructor() {
-    this.urlApiVar.forEach(el => {/* bouclage sur les éléments de la variable urlApiVar et assemblage de ces dernier si il ne sont pas vide*/
-      if (el.value !== null) {
-        this.baseUrlApi = this.baseUrlApi + el.name + el.value;
-      } else {
-        this.baseUrlApi = this.baseUrlApi;
-      }
-      return this.baseUrlApi;
-    });
-  };
+    for (const key in param) {
+      // if (Object.prototype.hasOwnProperty.call(param, key)) {
+        urlconst[i].value = param[key];
+        console.log("ajout de ", urlconst[i].value);
+        i++
+      // }
 
-  setUrlApi(): string {/* retourne l'URL complete a envoyer soit celle par defaut soit la construite par parametre*/
-    this.urlConstructor();
-    if (this.baseUrlApi === `https://opentdb.com/api.php?`) {
-      return this.urlDefautApi
-    } else {
-      return this.baseUrlApi
-    }
+      console.log('mon tableau', urlconst)
+
+    };
+    console.log("envoie au construc url", urlconst)
+    return this.urlConstructor(urlconst)
   }
+
+
+  // array: Choice[]
+  urlConstructor(array: any) {
+    let urlApi = `https://opentdb.com/api.php?`
+    array.forEach((el: { value: string | number | null; name: string; }) => {/* bouclage sur les éléments de la variable urlApiVar et assemblage de ces dernier si il ne sont pas vide*/
+      if (el.value !== null && el.value !=="null") {
+        urlApi = urlApi + el.name + el.value;
+        console.log("ajourt de :", el.name, el.value);
+      } else {
+        urlApi = urlApi
+        console.log('on touche pas :', urlApi);
+      }
+    }); console.log("normalement mon url", urlApi)
+    return urlApi;
+  };
+
 }

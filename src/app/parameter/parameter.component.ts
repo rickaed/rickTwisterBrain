@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Choice } from "../models/choice.interface.";
+import { ParamQuestions } from '../models/param-question.model';
 import { ApiQuestionService } from '../services/api-question.service';
-import { QuestionParameterService } from '../services/question-parameter.service';
 
 @Component({
   selector: 'app-parameter',
@@ -11,27 +11,79 @@ import { QuestionParameterService } from '../services/question-parameter.service
 export class ParameterComponent implements OnInit {
 
   constructor(
-    private paramsQuestion: QuestionParameterService,
     private apiQuestionServ: ApiQuestionService) { };
 
   // ⬇ DECLARATION NECESSAIRE AU FORM ⬇
-  paramQuestion!: any;/*soucis d'assignation de type */
-  categoriesTab!: Choice[];
-  difficultiesTab!: Choice[];
-  typesTab!: Choice[];
+  paramQuestion: ParamQuestions = this.apiQuestionServ.getParamdefaut();
+
+  categoriesTab: Choice[] = [
+    {
+      name: "Aléatoire",
+      value: null
+    },
+    {
+      name: "Culture général",
+      value: 9
+    },
+    {
+      name: "Sport",
+      value: 21
+    },
+    {
+      name: "Histoire",
+      value: 23
+    },
+    {
+      name: "Art",
+      value: 25
+    },
+    {
+      name: "Manga",
+      value: 31
+    },
+  ];
+
+  difficultiesTab: Choice[] = [
+    {
+      name: "Aléatoire",
+      value: null
+    },
+    {
+      name: "Easy",
+      value: "easy"
+    },
+    {
+      name: "Medium",
+      value: "medium"
+    },
+    {
+      name: "Hard",
+      value: "hard"
+    }
+  ];
+
+  typesTab: Choice[] = [
+    {
+      name: "Aléatoire",
+      value: null
+    },
+    {
+      name: "Choix Multiple ",
+      value: "multiple"
+    },
+    {
+      name: "Vrai ou faux",
+      value: "boolean"
+    },
+  ];
 
   ngOnInit(): any {
-    // ⬇ INITIALISATION AVEC LES PARAM PAR DEFAUT DU FORMULAIRE ⬇
-    this.paramQuestion = this.paramsQuestion.setDefaultParameterForm();
-    this.categoriesTab = this.paramsQuestion.setCategoriesForm();
-    this.difficultiesTab = this.paramsQuestion.setDiffucltiesForm();
-    this.typesTab = this.paramsQuestion.setTypesForm();
 
   };
 
 
   // ⬇ ok ⬇
-  async onSubmit() {
-    this.apiQuestionServ.getParamQuestion(this.paramQuestion.nbQuestions,this.paramQuestion.categorie, this.paramQuestion.difficulty, this.paramQuestion.type)
+  onSubmit() {
+    this.apiQuestionServ.setParamQuestions(this.paramQuestion)
   };
 }

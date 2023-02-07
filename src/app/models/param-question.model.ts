@@ -1,6 +1,11 @@
 export class ParamQuestions {
-    nbQuestions!: number;
-    type!: null | "multiple" | "boolean";
-    category!: number | null;
-    difficulty!: "easy" | "medium" | "hard" | null;
+
+  
+         nbQuestions!: number;
+         category!: number | null;
+         difficulty!: "easy" | "medium" | "hard" | null;
+         type!: null | "multiple" | "boolean";
+    
+
+
 }
