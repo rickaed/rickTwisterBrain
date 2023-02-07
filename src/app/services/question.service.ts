@@ -1,7 +1,9 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { BehaviorSubject, tap } from 'rxjs';
 import { ApiQuestionService } from './api-question.service';
+
 export interface Response {
   response_code: number,
   results: []
@@ -12,9 +14,18 @@ export interface Response {
   providedIn: 'root'
 })
 
-export class QuestionService implements OnInit {
+export class QuestionService {
 
-  // urlApiQuestions: string = 'https://opentdb.com/api.php?';
+
+
+public generalUrl : string = 'https://opentdb.com/api.php?amount=10'
+public easyUrl : string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
+public mediumUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=medium'
+public hardUrl : string = 'https://opentdb.com/api.php?amount=10&difficulty=difficult'
+datas:any;
+questions:any;
+timeLeft: number = 10;
+interval:any;
 
   public generalUrl: string = 'https://opentdb.com/api.php?amount=10'
   public easyUrl: string = 'https://opentdb.com/api.php?amount=1&category=23&difficulty=easy&type=multiple'
@@ -76,7 +87,5 @@ this.apiServ.getUrlAPI()
     return array;
   }
 
-  ngOnInit(): void {
 
-  }
 }

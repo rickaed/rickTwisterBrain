@@ -20,7 +20,7 @@ export class ApiQuestionService {
   // ⬇ CONSTITUTION DE L'ADRESSE API ⬇
 
   // envoie des valeur par defaut au formulaire
-  getParamdefaut() {
+  getParamdefaut(): ParamQuestions {
     return this.defautValueParam
   }
 
@@ -58,14 +58,10 @@ export class ApiQuestionService {
     ];
 
     for (const key in param) {
-      // if (Object.prototype.hasOwnProperty.call(param, key)) {
       urlconst[i].value = param[key];
       // console.log("ajout de ", urlconst[i].value);
-      i++
-      // }
-
+      i++      
       // console.log('mon tableau', urlconst)
-
     };
     // console.log("envoie au construc url", urlconst)
     return this.urlConstructor(urlconst)
