@@ -75,7 +75,7 @@ export class ApiQuestionService {
     array.forEach((el: { value: string | number | null; name: string; }) => {/* bouclage sur les éléments de la variable urlApiVar et assemblage de ces dernier si il ne sont pas vide*/
       if (el.value !== null && el.value !== "null") {
         urlApi = urlApi + el.name + el.value;
-        // console.log("ajout de :", el.name, el.value);
+        // console.log("ajourt de :", el.name, el.value);
       } else {
         urlApi = urlApi
         // console.log('on touche pas :', urlApi);

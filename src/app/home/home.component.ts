@@ -1,6 +1,5 @@
 
 import { Component, OnInit } from '@angular/core';
-
 import { ApiQuestionService } from '../services/api-question.service';
 
 @Component({
@@ -16,5 +15,6 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     // this.urlApi=this.myUrl.setParamQuestions()
     console.log(this.myUrl.setParamQuestions())
-  }
+
+  }  
 }

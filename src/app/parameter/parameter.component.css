@@ -95,6 +95,7 @@ section {
     align-items: center;
 }
 
+
 .mid>*:nth-child(odd) {
     background-color: var(--colorJaune);
     color: var(--colorOrange);
