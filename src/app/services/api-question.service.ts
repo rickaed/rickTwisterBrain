@@ -86,7 +86,7 @@ export class ApiQuestionService {
   };
 
   getUrlAPI(){
-return this.http.get(this.setParamQuestions());
+return this.setParamQuestions();
   }
 
 }

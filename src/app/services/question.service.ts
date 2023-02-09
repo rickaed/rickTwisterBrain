@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
+import { ApiQuestionService } from './api-question.service';
 export interface Response {
   response_code:number,
   results:[]
@@ -19,8 +20,30 @@ export class QuestionService {
   questions: any;
   timeLeft: number = 10;
   interval: any;
+resultQuestions:any=[];
+constructor(private http : HttpClient,
+  private myUrl:ApiQuestionService,
+  ){ this.getEasyQuestion()}
 
-constructor(private http : HttpClient){ this.getEasyQuestion()}
+getQuestion(){
+  return fetch('https://opentdb.com/api.php?amount=3&category=23&difficulty=easy&type=multiple')
+  .then(response => response.json())
+  .then(questions => {
+questions.results.map((question:any)=> {
+  this.resultQuestions.push(question)
+  });
+  console.log(this.resultQuestions);  
+  })
+}
+
+getQuestionSubscribe(){
+  return this.http.get<any>('https://opentdb.com/api.php?amount=3&category=23&difficulty=easy&type=multiple')
+  .subscribe(data =>{
+    data.response.map((question:any)=>{
+      this.resultQuestions.push(question)
+    })
+  })
+}
 
 getEasyQuestion(){
  return this.http.get<any>(this.easyUrl).pipe(
